@@ -23,16 +23,17 @@ def update_email(msg_received,header):
         cursor.execute("SELECT * FROM `user` WHERE user_id='" + str(user_id) + "';")
         row = cursor.fetchall()
         if len(row) == 1:
-            cursor.execute("UPDATE `user` SET `email` = '" + email + "' WHERE user_id=" + str(user_id) + ";")
-            conn.commit()
-            send_mail.sendVerification(email, row[2], random_number)
-            cursor.execute("UPDATE `verification` SET ``verification_code`` = '"+random_number+"' WHERE user_id=" + str(user_id) + ";")
-            conn.commit()
-            cursor.execute("UPDATE `verification` SET `verified` = '0' WHERE user_id=" + str(user_id) + ";")
-            conn.commit()
-            conn.close()
-            cursor.close()
-            return json.dumps({'notification':'email updated'})
+            for record in row:
+                cursor.execute("UPDATE `user` SET `email` = '" + email + "' WHERE user_id=" + str(user_id) + ";")
+                conn.commit()
+                send_mail.sendVerification(email, str(record[2]), random_number)
+                cursor.execute("UPDATE `verification` SET `verification_code` = '"+str(random_number)+"' WHERE user_id=" + str(user_id) + ";")
+                conn.commit()
+                cursor.execute("UPDATE `verification` SET `verified` = '0' WHERE user_id=" + str(user_id) + ";")
+                conn.commit()
+                conn.close()
+                cursor.close()
+                return json.dumps({'notification':'email updated'})
 
         else:
             conn.close()

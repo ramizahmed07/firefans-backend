@@ -7,9 +7,9 @@ import collections
 
 # api-endpoint
 #https://github.com/ramizahmed07/fb-clone.git
-#URL = 'http://127.0.0.1:5000'
-URL ='https://32aa993c95fd.ngrok.io'
-token_home="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDk0OTA1ODksImlhdCI6MTYwNjg5ODU4OSwic3ViIjoxfQ.HxIP_5b4qFB24BX4IlaNy4T8HsoacG1w4AZ4Rmf3_ig"
+URL = 'http://127.0.0.1:5000'
+#URL ='https://32aa993c95fd.ngrok.io'
+token_home="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTAwNTQ1OTEsImlhdCI6MTYwNzQ2MjU5MSwic3ViIjoyfQ.6cDNZvyvdulh5zL6y_rVssDfF55moe4PElcxvzl5QBU"
 token_google="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDk3ODQ0ODQsImlhdCI6MTYwNzE5MjQ4NCwic3ViIjo4fQ.3AqUCoAGqvnQtqwoxo_j66ID1aGmpZRB6Loud9366KQ"
 
 
@@ -19,7 +19,7 @@ def login():
     req.add_header('Content-Type', 'application/json; charset=utf-8')
 
     #x={'subject':"login",'email':"hassanA",'password':"1234566"}
-    x = {'subject': "login", 'email': "athmani", 'password': "12345678"}
+    x = {'subject': "login", 'email': "hassan1234", 'password': "12345678"}
     body2=json.dumps(x)
     jsondata=body2.encode('utf-8')
     req.add_header('Content-Length', len(jsondata))
@@ -97,5 +97,18 @@ def persist():
 
     print(r.read().decode())
 
+def change_mail():
+    req = urllib.request.Request(URL)
+    req.add_header('Content-Type', 'application/json; charset=utf-8')
+    req.add_header("Authorization",token_home)
 
-editProf()
+    x = {'subject': "changeMail","email":"johnruben150@gmail.com"}
+    body2 = json.dumps(x)
+    jsondata = body2.encode('utf-8')
+
+    r = urllib.request.urlopen(req, jsondata)
+
+    print(r.read().decode())
+
+
+change_mail()

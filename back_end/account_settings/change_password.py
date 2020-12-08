@@ -21,7 +21,7 @@ def update_password(msg_received,header):
         cursor.execute("SELECT * FROM `user` WHERE user_id='" + str(user_id) + "';")
         row = cursor.fetchall()
         if len(row) == 1:
-            cursor.execute("UPDATE `user` SET `password` = '" + password + "' WHERE user_id=" + str(user_id) + ";")
+            cursor.execute("UPDATE `user` SET `password` = '" + str(password) + "' WHERE user_id=" + str(user_id) + ";")
             conn.commit()
             conn.close()
             cursor.close()

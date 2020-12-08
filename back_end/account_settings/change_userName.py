@@ -22,7 +22,7 @@ def update_userName(msg_received,header):
         cursor.execute("SELECT * FROM `user` WHERE user_id='" + str(user_id) + "';")
         row = cursor.fetchall()
         if len(row) == 1:
-            cursor.execute("UPDATE `user` SET `userName` = '" + userName + "' WHERE user_id=" + str(user_id) + ";")
+            cursor.execute("UPDATE `user` SET `userName` = '" + str(userName) + "' WHERE user_id=" + str(user_id) + ";")
             conn.commit()
             conn.close()
             cursor.close()

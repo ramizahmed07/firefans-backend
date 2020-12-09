@@ -1,14 +1,13 @@
+import random
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
 import collections
 import json
 import tokens
 import send_mail
-import random
 
 def update_email(msg_received,header):
     email = msg_received["email"]
-    code =msg_received["code"]
     user_id = tokens.getID(header)
     random_number = random.randint(10000, 99999)
 
@@ -21,19 +20,20 @@ def update_email(msg_received,header):
 
     else:
 
-        cursor.execute("SELECT * FROM `verification` WHERE user_id='" + str(user_id) + "' AND verification_code="+str(code)+";")
+        cursor.execute("SELECT * FROM `user` WHERE user_id='" + str(user_id) + "';")
         row = cursor.fetchall()
         if len(row) == 1:
             for record in row:
-                cursor.execute("UPDATE `user` SET `email` = '" + email + "' WHERE user_id=" + str(user_id) + ";")
+                send_mail.sendVerification(email, str(record[2]), random_number)
+                cursor.execute("UPDATE `verification` SET `verification_code` = '"+str(random_number)+"' WHERE user_id=" + str(user_id) + ";")
                 conn.commit()
-                cursor.execute("UPDATE `verification` SET `verified` = '1' WHERE user_id=" + str(user_id) + ";")
+                cursor.execute("UPDATE `verification` SET `verified` = '0' WHERE user_id=" + str(user_id) + ";")
                 conn.commit()
                 conn.close()
                 cursor.close()
-                return json.dumps({'notification':'email updated'})
+                return json.dumps({'notification':'code sent'})
 
         else:
             conn.close()
             cursor.close()
-            return json.dumps({'Error':'email not updated'})
+            return json.dumps({'Error':'code not sent'})

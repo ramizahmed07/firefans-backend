@@ -4,7 +4,7 @@ import register,resend_verification,verify_user,editMail,edit_profile,persistanc
 import json
 from flask_cors import CORS, cross_origin
 from checkers import checkPhoneNo,checkUserName,checkEmail
-from account_settings import change_email,change_password,change_phoneNo,change_userName
+from account_settings import change_email,change_password,change_phoneNo,change_userName,verify_email
 from media_handling import upload_image
 from flask import request
 
@@ -54,6 +54,9 @@ def chat():
 
     elif msg_subject=="changeMail":
         return change_email.update_email(msg_received,header)
+
+    elif msg_subject=="verifyEmail":
+        return verify_email.verify_email(msg_received,header)
 
     elif msg_subject=="changePass":
         return change_password.update_password(msg_received,header)

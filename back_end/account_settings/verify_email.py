@@ -6,7 +6,7 @@ import json
 import tokens
 import send_mail
 
-def update_email(msg_received,header):
+def verify_email(msg_received,header):
     email = msg_received["email"]
     user_id = tokens.getID(header)
     random_number = random.randint(10000, 99999)

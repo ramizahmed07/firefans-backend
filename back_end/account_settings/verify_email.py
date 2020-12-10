@@ -25,7 +25,7 @@ def verify_email(msg_received,header):
         if len(row) == 1:
             for record in row:
 
-                cursor.execute("SELECT * FROM `user` WHERE email='" + str(email) + ";")
+                cursor.execute("SELECT * FROM `user` WHERE email='" + str(email) + "';")
                 mails = cursor.fetchall()
 
                 if len(mails) == 0:

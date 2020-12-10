@@ -24,7 +24,7 @@ def update_email(msg_received,header):
         cursor.execute("SELECT * FROM `verification` WHERE user_id='" + str(user_id) + "' AND verification_code="+str(code)+";")
         row = cursor.fetchall()
         if len(row) == 1:
-            for record in row:
+            #for record in row:
                 cursor.execute("UPDATE `user` SET `email` = '" + email + "' WHERE user_id=" + str(user_id) + ";")
                 conn.commit()
                 cursor.execute("UPDATE `verification` SET `verified` = '1' WHERE user_id=" + str(user_id) + ";")

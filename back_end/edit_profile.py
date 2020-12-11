@@ -124,17 +124,24 @@ def edit_profile(msg_received,header):
                     userName_response=str(cursor.rowcount)
 
 
-            if not location.isspace():
-                if location:
-                    cursor.execute("UPDATE `user` SET `location` = '" + location + "' WHERE user_id=" + str(userID) + ";")
-                    conn.commit()
-                    location_response=str(cursor.rowcount)
 
-            if not website.isspace():
-                if website:
-                    cursor.execute("UPDATE `user_data` SET `website` = '" + website + "' WHERE user_id=" + str(userID) + ";")
-                    conn.commit()
-                    website_response=str(cursor.rowcount)
+            if location:
+                cursor.execute("UPDATE `user` SET `location` = '" + location + "' WHERE user_id=" + str(userID) + ";")
+                conn.commit()
+                location_response=str(cursor.rowcount)
+            else:
+                cursor.execute("UPDATE `user` SET `location` = '" + location + "' WHERE user_id=" + str(userID) + ";")
+                conn.commit()
+
+
+            if website:
+                cursor.execute("UPDATE `user_data` SET `website` = '" + website + "' WHERE user_id=" + str(userID) + ";")
+                conn.commit()
+                #website_response=str(cursor.rowcount)
+            else:
+                cursor.execute("UPDATE `user_data` SET `website` = '" + website + "' WHERE user_id=" + str(userID) + ";")
+                conn.commit()
+
 
             if not cover_photo.isspace():
                 if cover_photo:
@@ -150,13 +157,20 @@ def edit_profile(msg_received,header):
                cursor.execute("UPDATE `subscription_price` SET `subscription_price` = '" + str(subscription_price) + "' WHERE user_id=" + str(userID) + ";")
                conn.commit()
                subscription_price_response=str(cursor.rowcount)
+            else:
+                cursor.execute("UPDATE `subscription_price` SET `subscription_price` = '0' WHERE user_id=" + str(userID) + ";")
+                conn.commit()
 
 
-            if not bio.isspace():
-                if bio:
-                    cursor.execute("UPDATE `user_data` SET `bio` = '" + bio + "' WHERE user_id=" + str(userID) + ";")
-                    conn.commit()
-                    bio_response=str(cursor.rowcount)
+            #if not bio.isspace():
+            if bio:
+                cursor.execute("UPDATE `user_data` SET `bio` = '" + bio + "' WHERE user_id=" + str(userID) + ";")
+                conn.commit()
+                #bio_response=str(cursor.rowcount)
+            else:
+                cursor.execute("UPDATE `user_data` SET `bio` = '" + bio + "' WHERE user_id=" + str(userID) + ";")
+                conn.commit()
+
 
             #d["fullName"] = fullName_response
             #d["userName"] = userName_response

@@ -111,4 +111,17 @@ def change_mail():
     print(r.read().decode())
 
 
-change_mail()
+def upload_profile():
+    req = urllib.request.Request(URL)
+    req.add_header('Content-Type', 'application/json; charset=utf-8')
+    req.add_header("Authorization", token_home)
+
+    x = {'subject': "uploadProfilePhoto","file_type":"png"}
+    body2 = json.dumps(x)
+    jsondata = body2.encode('utf-8')
+
+    r = urllib.request.urlopen(req, jsondata)
+
+    print(r.read().decode())
+
+upload_profile()

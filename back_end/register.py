@@ -46,6 +46,7 @@ def register_user(msg_received):
 
 
 
+
         conn.close()
         cursor.close()
         return json.dumps({'notification':'success','verification':'sent'})

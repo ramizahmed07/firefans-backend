@@ -55,6 +55,8 @@ def profile_photo(msg_received,header):
                 )
                 cursor.execute("UPDATE `profile_photo` SET `profile_pic` = '" + str('https://%s.s3.amazonaws.com/%s' % (S3_BUCKET,fileName)) + "' WHERE user_id=" + str(user_id) + ";")
                 conn.commit()
+                conn.close()
+                cursor.close()
 
                 return json.dumps({
                     'data': presigned_post,
@@ -109,6 +111,8 @@ def cover_photo(msg_received,header):
                 )
                 cursor.execute("UPDATE `cover_photo` SET `cover_pic` = '" + str('https://%s.s3.amazonaws.com/%s' % (S3_BUCKET,fileName)) + "' WHERE user_id=" + str(user_id) + ";")
                 conn.commit()
+                conn.close()
+                cursor.close()
 
                 return json.dumps({
                     'data': presigned_post,
@@ -160,8 +164,11 @@ def post_image(msg_received,header):
                     ],
                     ExpiresIn=10800
                 )
-                cursor.execute("UPDATE `post_images` SET `image_url` = '" + str('https://%s.s3.amazonaws.com/%s' % (S3_BUCKET,fileName)) + "' AND SET `key_name` ='"+uniqueID+"' WHERE user_id=" + str(user_id) + ";")
+                #cursor.execute("UPDATE `post_images` SET `image_url` = '" + str('https://%s.s3.amazonaws.com/%s' % (S3_BUCKET,fileName)) + "' AND SET `key_name` ='"+uniqueID+"' WHERE user_id=" + str(user_id) + ";")
+                cursor.execute("INSERT INTO `post_images` (`id`, `user_id`, `image_url`, `date_created`, `key_name`) VALUES (NULL, '"+str(user_id)+"', '" + str('https://%s.s3.amazonaws.com/%s' % (S3_BUCKET,fileName)) + "', CURRENT_TIMESTAMP, '"+str(uniqueID)+"')")
                 conn.commit()
+                conn.close()
+                cursor.close()
 
                 return json.dumps({
                     'data': presigned_post,

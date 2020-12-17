@@ -1,11 +1,14 @@
 import flask
+
 import login as me
-import register,resend_verification,verify_user,editMail,edit_profile,persistance
+import register,resend_verification,verify_user,editMail,edit_profile,persistance,forgot_pass
 import json
 from flask_cors import CORS, cross_origin
 from checkers import checkPhoneNo,checkUserName,checkEmail
 from account_settings import change_email,change_password,change_phoneNo,change_userName,verify_email,isPasswordCorrect
 from media_handling import upload_image
+from mongoDB import create_doc
+
 from flask import request
 
 
@@ -26,6 +29,12 @@ def chat():
 
     if msg_subject == "login":
         return me.getInfo(msg_received)
+
+    elif msg_subject == "forgetPass":
+        return forgot_pass.forgot_password(msg_received)
+
+    elif msg_subject == "forgetPass_code":
+        return forgot_pass.verify_pass_code(msg_received)
 
     elif msg_subject=="register":
         return register.register_user(msg_received)
@@ -76,8 +85,17 @@ def chat():
     elif msg_subject=="uploadCoverPhoto":
         return upload_image.cover_photo(msg_received,header)
 
+    elif msg_subject=="postImage":
+        return upload_image.post_image(msg_received,header)
+
     elif msg_subject=="getData":
         return persistance.persist(header)
+
+    elif msg_subject=="normal_post":
+        return create_doc.wall_post(msg_received,header)
+
+    elif msg_subject == "mega_post":
+        return create_doc.add_post(msg_received,header)
 
 
 

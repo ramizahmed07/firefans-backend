@@ -18,7 +18,7 @@ def sendVerification(recipient,user_name,random_number):
     # Create a secure SSL context
     context = ssl.create_default_context()
 
-    msg = MIMEText('THIS IS YOUR VERIFICATION CODE '+str(random_number)+'.')
+    msg = MIMEText('THIS IS YOUR VERIFICATION CODE '+str(random_number))
 
     msg['To'] = email.utils.formataddr((user_name,recipient))
     msg['From'] = email.utils.formataddr(('Firefans','noreply@firefans.co'))

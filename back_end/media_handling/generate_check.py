@@ -32,3 +32,30 @@ def check(code):
         #print(code)
         return code
 
+def wall_post_gen():
+    return post_code(picture_code.generate_code())
+#
+#STRICTLY FOR IMAGES
+def post_code(code):
+    dbconfig = read_db_config()
+    conn = MySQLConnection(**dbconfig)
+    cursor = conn.cursor()
+    # print(code)
+
+    cursor.execute("SELECT * FROM `post_images` WHERE `key_name` ='" + str(code) + "';")
+    profile_row = cursor.fetchall()
+    #cursor.execute("SELECT * FROM `posts` WHERE `uniqueID` ='" + str(code) + "';")
+    #cover_row = cursor.fetchall()
+
+    if len(profile_row) == 1:
+        conn.close()
+        cursor.close()
+        return wall_post_gen()
+
+    else:
+        conn.close()
+        cursor.close()
+        # print(code)
+        return code
+
+

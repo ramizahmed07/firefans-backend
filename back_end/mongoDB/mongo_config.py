@@ -26,5 +26,5 @@ def read_config(filename=os.getcwd()+'/mongoDB/mongo.ini', section='mongoDB'):
     return db
 
 
-print(read_config())
+
 #print(os.getcwd())

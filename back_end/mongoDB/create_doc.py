@@ -6,6 +6,7 @@ import tokens
 from media_handling import picture_code
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
+import collections
 
 key=mongo_config.read_config()
 client = pymongo.MongoClient("mongodb://hassan:"+key['password']+"@firefans-test-shard-00-00.l9uuz.mongodb.net:27017,firefans-test-shard-00-01.l9uuz.mongodb.net:27017,firefans-test-shard-00-02.l9uuz.mongodb.net:27017/"+key['database']+"?ssl=true&replicaSet=atlas-o4g1ic-shard-0&authSource=admin&retryWrites=true&w=majority")
@@ -23,7 +24,7 @@ def check_post_code(code):
     conn = MySQLConnection(**dbconfig)
     cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM `post` WHERE post_id='" + str(code) +"';")
+    cursor.execute("SELECT * FROM `posts` WHERE post_id='" + str(code) +"';")
     row = cursor.fetchall()
     if len(row) > 0:
         conn.close()
@@ -77,8 +78,9 @@ def add_post(msg_received,header):
         conn.commit()
         conn.close()
         cursor.close()
-        result=collection.find({'user_id':user_id})
-        return json.dumps(result)
+        result=collection.find({"post_id": post_id})
+        for i in result:
+            return i
 
 
 def wall_post(msg_received,header):
@@ -86,11 +88,12 @@ def wall_post(msg_received,header):
     dbconfig = read_db_config()
     conn = MySQLConnection(**dbconfig)
     cursor = conn.cursor()
+    d = collections.OrderedDict()
 
     user_id = tokens.getID(header)
     post_details = msg_received["post_details"]
-    timestamp = msg_received["timestamps"]
-    post_images = msg_received["post_images"]
+    timestamp = msg_received["timestamp"]
+    #post_images = msg_received["post_images"]
     post_id= runner()
    # audio = msg_received["audio_files"]
    # video = msg_received["video_files"]
@@ -98,8 +101,8 @@ def wall_post(msg_received,header):
 
     images = []
 
-    for i in post_images:
-        images.append(i)
+    #for i in post_images:
+     #   images.append(i)
 
     if user_id == "Error expired token" or user_id == "Error invalid token":
         return json.dumps({'Error': 'login in again'})
@@ -119,10 +122,22 @@ def wall_post(msg_received,header):
         #"video": video
 
         collection.insert_one(user_post)
-        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`) VALUES (NULL, '"+user_id+"', '"+post_id+"', CURRENT_TIMESTAMP)")
+        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`) VALUES (NULL, '"+str(user_id)+"', '"+str(post_id)+"', CURRENT_TIMESTAMP)")
         conn.commit()
         conn.close()
         cursor.close()
-        result = collection.find({'user_id': user_id})
-        return json.dumps(result)
+        result = collection.find({"post_id": post_id})
+
+        data=[]
+
+        for i in result:
+            d['post_id']=i['post_id']
+            d['post_details']=i['post_details']
+            d['posted_by']=i['posted_by']
+            d['timestamp']=i['timestamp']
+            d['post_likes']=i['post_likes']
+
+        data.append(d)
+
+        return json.dumps(data)
 

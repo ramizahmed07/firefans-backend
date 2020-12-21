@@ -41,6 +41,7 @@ def add_post(msg_received,header):
     dbconfig = read_db_config()
     conn = MySQLConnection(**dbconfig)
     cursor = conn.cursor()
+    d = collections.OrderedDict()
 
 
     user_id=tokens.getID(header)
@@ -74,13 +75,26 @@ def add_post(msg_received,header):
         }
 
         collection.insert_one(user_post)
-        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`) VALUES (NULL, '" + user_id + "', '" + post_id + "', CURRENT_TIMESTAMP)")
+        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`,`uniqueID`) VALUES (NULL, '" + str(user_id) + "', '" + str(post_id) + "', CURRENT_TIMESTAMP),'null'")
         conn.commit()
         conn.close()
         cursor.close()
         result=collection.find({"post_id": post_id})
+
+        data=[]
         for i in result:
-            return i
+            d['post_id'] = i['post_id']
+            d['post_details'] = i['post_details']
+            d['posted_by'] = i['posted_by']
+            d['timestamp'] = i['timestamp']
+            d['images'] = i['images']
+            d['audio'] = i['audio']
+            d['video'] = i['video']
+            d['post_likes'] = i['post_likes']
+
+        data.append(d)
+
+        return json.dumps(data)
 
 
 def wall_post(msg_received,header):
@@ -122,7 +136,7 @@ def wall_post(msg_received,header):
         #"video": video
 
         collection.insert_one(user_post)
-        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`) VALUES (NULL, '"+str(user_id)+"', '"+str(post_id)+"', CURRENT_TIMESTAMP)")
+        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`,`uniqueID`) VALUES (NULL, '"+str(user_id)+"', '"+str(post_id)+"', CURRENT_TIMESTAMP),'null'")
         conn.commit()
         conn.close()
         cursor.close()

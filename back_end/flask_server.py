@@ -79,6 +79,8 @@ def chat():
     elif msg_subject=="changeUserName":
         return change_userName.update_userName(msg_received,header)
 
+    #IMAGE WORKS
+
     elif msg_subject=="uploadProfilePhoto":
         return upload_image.profile_photo(msg_received,header)
 

@@ -165,7 +165,7 @@ def post_image(msg_received,header):
                     ExpiresIn=10800
                 )
                 #cursor.execute("UPDATE `post_images` SET `image_url` = '" + str('https://%s.s3.amazonaws.com/%s' % (S3_BUCKET,fileName)) + "' AND SET `key_name` ='"+uniqueID+"' WHERE user_id=" + str(user_id) + ";")
-                cursor.execute("INSERT INTO `post_images` (`id`, `user_id`, `image_url`, `date_created`, `key_name`) VALUES (NULL, '"+str(user_id)+"', '" + str('https://%s.s3.amazonaws.com/%s' % (S3_BUCKET,fileName)) + "', CURRENT_TIMESTAMP, '"+str(uniqueID)+"')")
+                cursor.execute("INSERT INTO `post_images` (`id`, `user_id`, `image_url`, `date_created`, `key_name`) VALUES (NULL, '"+str(user_id)+"', '" + str('https://%s.s3.amazonaws.com/%s' % (S3_BUCKET,fileName)) + "', CURRENT_TIMESTAMP, '"+str(uniqueID)+"');")
                 conn.commit()
                 conn.close()
                 cursor.close()

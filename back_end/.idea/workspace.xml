@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82dfd4cf-88b3-4de2-bef8-9ce47f6ce391" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_handling/audio_upload.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_handling/video_upload.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongoDB/likes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongoDB/create_doc.py" afterPath="$PROJECT_DIR$/mongoDB/create_doc.py" />
     </list>
@@ -55,8 +52,8 @@
       <file leaf-file-name="create_doc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mongoDB/create_doc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-754">
-              <caret line="77" column="155" lean-forward="false" selection-start-line="77" selection-start-column="155" selection-end-line="77" selection-end-column="155" />
+            <state relative-caret-position="548">
+              <caret line="138" column="181" lean-forward="false" selection-start-line="138" selection-start-column="181" selection-end-line="138" selection-end-column="181" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -878,8 +875,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mongoDB/create_doc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-754">
-          <caret line="77" column="155" lean-forward="false" selection-start-line="77" selection-start-column="155" selection-end-line="77" selection-end-column="155" />
+        <state relative-caret-position="548">
+          <caret line="138" column="181" lean-forward="false" selection-start-line="138" selection-start-column="181" selection-end-line="138" selection-end-column="181" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

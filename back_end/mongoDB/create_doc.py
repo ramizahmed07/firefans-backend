@@ -75,7 +75,7 @@ def add_post(msg_received,header):
         }
 
         collection.insert_one(user_post)
-        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`,`uniqueID`) VALUES (NULL, '" + str(user_id) + "', '" + str(post_id) + "', CURRENT_TIMESTAMP),'null'")
+        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`,`uniqueID`) VALUES (NULL, '" + str(user_id) + "', '" + str(post_id) + "', CURRENT_TIMESTAMP),'null');")
         conn.commit()
         conn.close()
         cursor.close()
@@ -136,7 +136,7 @@ def wall_post(msg_received,header):
         #"video": video
 
         collection.insert_one(user_post)
-        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`,`uniqueID`) VALUES (NULL, '"+str(user_id)+"', '"+str(post_id)+"', CURRENT_TIMESTAMP),'null'")
+        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`,`uniqueID`) VALUES (NULL, '"+str(user_id)+"', '"+str(post_id)+"', CURRENT_TIMESTAMP),'null');")
         conn.commit()
         conn.close()
         cursor.close()

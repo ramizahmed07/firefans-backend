@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82dfd4cf-88b3-4de2-bef8-9ce47f6ce391" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongoDB/fetchAllPost.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flask_server.py" afterPath="$PROJECT_DIR$/flask_server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media_handling/upload_image.py" afterPath="$PROJECT_DIR$/media_handling/upload_image.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongoDB/create_doc.py" afterPath="$PROJECT_DIR$/mongoDB/create_doc.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="flask_server.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="flask_server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flask_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="81" column="16" lean-forward="false" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+            <state relative-caret-position="443">
+              <caret line="104" column="43" lean-forward="false" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -53,10 +52,11 @@
       <file leaf-file-name="create_doc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongoDB/create_doc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="77" column="179" lean-forward="false" selection-start-line="77" selection-start-column="179" selection-end-line="77" selection-end-column="179" />
+            <state relative-caret-position="401">
+              <caret line="87" column="14" lean-forward="false" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="25" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#2964#4536#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -72,13 +72,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload_image.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="upload_image.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/media_handling/upload_image.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1559">
               <caret line="175" column="18" lean-forward="true" selection-start-line="175" selection-start-column="18" selection-end-line="175" selection-end-column="18" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fetchAllPost.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mongoDB/fetchAllPost.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,16 +121,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mongo.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongoDB/mongo.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -187,8 +189,9 @@
         <option value="$PROJECT_DIR$/media_handling/audio_upload.py" />
         <option value="$PROJECT_DIR$/media_handling/video_upload.py" />
         <option value="$PROJECT_DIR$/media_handling/upload_image.py" />
-        <option value="$PROJECT_DIR$/flask_server.py" />
         <option value="$PROJECT_DIR$/mongoDB/create_doc.py" />
+        <option value="$PROJECT_DIR$/mongoDB/fetchAllPost.py" />
+        <option value="$PROJECT_DIR$/flask_server.py" />
       </list>
     </option>
   </component>
@@ -475,7 +478,7 @@
     <frame x="-9" y="-9" width="1932" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2719957" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27145922" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -525,13 +528,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/verify_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1092">
@@ -852,32 +848,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="81" column="16" lean-forward="false" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDB/create_doc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="77" column="179" lean-forward="false" selection-start-line="77" selection-start-column="179" selection-end-line="77" selection-end-column="179" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/media_handling/upload_image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1559">
           <caret line="175" column="18" lean-forward="true" selection-start-line="175" selection-start-column="18" selection-end-line="175" selection-end-column="18" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDB/create_doc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="87" column="14" lean-forward="false" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#2964#4536#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDB/fetchAllPost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="104" column="43" lean-forward="false" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>

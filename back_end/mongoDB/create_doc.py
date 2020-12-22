@@ -52,6 +52,7 @@ def add_post(msg_received,header):
     video=msg_received["video"]
     post_id= runner()
 
+
     images=[]
 
     for i in post_images:
@@ -62,39 +63,45 @@ def add_post(msg_received,header):
         return json.dumps({'Error': 'login in again'})
 
     else:
-        user_post = {
-            "post_id": post_id,
+        cursor.execute("SELECT * FROM `user` WHERE user_id='"+str(user_id)+"';")
+        name = cursor.fetchall()
+        if len(name) == 1:
+            for info in name:
+                userName = info[2]
+                user_post = {
+                    "post_id": post_id,
 
-            "post_details": post_details,
-            "posted_by": user_id,
-            "timestamp": timestamp,
-            "images": images,
-            "post_likes": [],
-            "audio":audio,
-            "video":video
-        }
+                    "post_details": post_details,
+                    "posted_by": user_id,
+                    "userName":userName,
+                    "timestamp": timestamp,
+                    "images": images,
+                    "post_likes": [],
+                    "audio":audio,
+                    "video":video
+                }
 
-        collection.insert_one(user_post)
-        cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`,`uniqueID`) VALUES (NULL, '" + str(user_id) + "', '" + str(post_id) + "', CURRENT_TIMESTAMP,'null');")
-        conn.commit()
-        conn.close()
-        cursor.close()
-        result=collection.find({"post_id":post_id})
+                collection.insert_one(user_post)
+                cursor.execute("INSERT INTO `posts` (`id`, `user_id`, `post_id`, `date_created`,`uniqueID`) VALUES (NULL, '" + str(user_id) + "', '" + str(post_id) + "', CURRENT_TIMESTAMP,'null');")
+                conn.commit()
+                conn.close()
+                cursor.close()
+                result=collection.find({"post_id":post_id})
 
-        data=[]
-        for i in result:
-            d['post_id'] = i['post_id']
-            d['post_details'] = i['post_details']
-            d['posted_by'] = i['posted_by']
-            d['timestamp'] = i['timestamp']
-            d['images'] = i['images']
-            d['audio'] = i['audio']
-            d['video'] = i['video']
-            d['post_likes'] = i['post_likes']
+                data=[]
+                for i in result:
+                    d['post_id'] = i['post_id']
+                    d['post_details'] = i['post_details']
+                    d['userName'] = i['userName']
+                    d['timestamp'] = i['timestamp']
+                    d['images'] = i['images']
+                    d['audio'] = i['audio']
+                    d['video'] = i['video']
+                    d['post_likes'] = i['post_likes']
 
-        data.append(d)
+                data.append(d)
 
-        return json.dumps(data)
+                return json.dumps(data)
 
 
 def wall_post(msg_received,header):

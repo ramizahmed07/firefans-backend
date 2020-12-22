@@ -186,4 +186,18 @@ def mega_poster():
 
     print(r.read().decode())
 
-mega_poster()
+def fetchAll():
+    req = urllib.request.Request(URL)
+    req.add_header('Content-Type', 'application/json; charset=utf-8')
+    req.add_header("Authorization", token_home)
+
+    x = {"subject": "fetch_all"}
+    body2 = json.dumps(x)
+    jsondata = body2.encode('utf-8')
+
+    r = urllib.request.urlopen(req, jsondata)
+
+    print(r.read().decode())
+
+fetchAll()
+#mega_poster()

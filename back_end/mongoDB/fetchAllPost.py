@@ -30,7 +30,15 @@ def fetchAll(header):
         data=[]
 
         for i in result:
+            posts={'post_id': i['post_id'],
+                   'post_details': i['post_details'],
+                   'userName': i['userName'],
+                    'timestamp': i['timestamp'],
+                    'images' : i['images'],
+                    'audio': i['audio'],
+                    'video' : i['video'],
+                    'post_likes': i['post_likes']}
 
-            data.append(i)
+            data.append(posts)
 
         return json.dumps(data)

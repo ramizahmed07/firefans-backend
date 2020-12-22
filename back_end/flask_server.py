@@ -27,6 +27,8 @@ def chat():
     msg_received = flask.request.get_json()
     msg_subject = msg_received["subject"]
 
+    #ACCOUNT CREATION AND LOGIN
+
     if msg_subject == "login":
         return me.getInfo(msg_received)
 
@@ -39,21 +41,23 @@ def chat():
     elif msg_subject=="register":
         return register.register_user(msg_received)
 
+    elif msg_subject == "resendVerification":
+        return resend_verification.resendVerification(msg_received)
+
+    elif msg_subject == "verifyUser":
+        return verify_user.verify_user(msg_received)
+
+
+    #ACCOUNT UPDATING
+
     elif msg_subject=="check_userName":
         return checkUserName.check_userName(msg_received)
-
 
     elif msg_subject=="check_email":
         return checkEmail.check_email(msg_received)
 
     elif msg_subject=="check_phoneNo":
         return checkPhoneNo.check_phoneNo(msg_received)
-
-    elif msg_subject=="resendVerification":
-        return resend_verification.resendVerification(msg_received)
-
-    elif msg_subject=="verifyUser":
-        return verify_user.verify_user(msg_received)
 
     elif msg_subject=="editMail":
         return editMail.editMail(msg_received)
@@ -79,7 +83,10 @@ def chat():
     elif msg_subject=="changeUserName":
         return change_userName.update_userName(msg_received,header)
 
-    #IMAGE WORKS
+    elif msg_subject=="getData":
+        return persistance.persist(header)
+
+    #AWS IMAGE WORKS
 
     elif msg_subject=="uploadProfilePhoto":
         return upload_image.profile_photo(msg_received,header)
@@ -90,8 +97,6 @@ def chat():
     elif msg_subject=="postImage":
         return upload_image.post_image(msg_received,header)
 
-    elif msg_subject=="getData":
-        return persistance.persist(header)
 
     #MONGO WORK
 

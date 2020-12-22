@@ -71,6 +71,12 @@ def persist(header):
                     for record in verified:
                         d['verified'] = record[4]
 
+                cursor.execute("SELECT * FROM `subscription_price` where user_id = '" + str(id_no) + "';")
+                sub_price = cursor.fetchall()
+                if len(sub_price) == 1:
+                    for record in sub_price:
+                        d['subscription_price'] = record[2]
+
 
                 cursor.execute("SELECT * FROM user_data where user_id = '" + str(id_no) + "';")
                 user_data = cursor.fetchall()

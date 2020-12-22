@@ -166,4 +166,24 @@ def poster():
 
     print(r.read().decode())
 
-poster()
+def mega_poster():
+    req = urllib.request.Request(URL)
+    req.add_header('Content-Type', 'application/json; charset=utf-8')
+    req.add_header("Authorization", token_home)
+    x= {
+        "subject":"mega_post",
+            "post_details": "post_details",
+            "timestamp": "timestamp",
+            "images": [],
+            "post_likes": [],
+            "audio":[],
+            "video":[]
+     }
+    body2 = json.dumps(x)
+    jsondata = body2.encode('utf-8')
+
+    r = urllib.request.urlopen(req, jsondata)
+
+    print(r.read().decode())
+
+mega_poster()

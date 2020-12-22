@@ -46,10 +46,10 @@ def add_post(msg_received,header):
 
     user_id=tokens.getID(header)
     post_details=msg_received["post_details"]
-    timestamp=msg_received["timestamps"]
-    post_images=msg_received["post_images"]
-    audio=msg_received["audio_files"]
-    video=msg_received["video_files"]
+    timestamp=msg_received["timestamp"]
+    post_images=msg_received["images"]
+    audio=msg_received["audio"]
+    video=msg_received["video"]
     post_id= runner()
 
     images=[]
@@ -63,7 +63,7 @@ def add_post(msg_received,header):
 
     else:
         user_post = {
-            "post_id": runner(),
+            "post_id": post_id,
 
             "post_details": post_details,
             "posted_by": user_id,
@@ -79,7 +79,7 @@ def add_post(msg_received,header):
         conn.commit()
         conn.close()
         cursor.close()
-        result=collection.find({"post_id": post_id})
+        result=collection.find({"post_id":post_id})
 
         data=[]
         for i in result:
@@ -140,7 +140,7 @@ def wall_post(msg_received,header):
         conn.commit()
         conn.close()
         cursor.close()
-        result = collection.find({"post_id": post_id})
+        result = collection.find({"post_id": str(post_id)})
 
         data=[]
 

@@ -81,28 +81,10 @@ def edit_profile(msg_received,header):
         row=cursor.fetchall()
         if len(row)==1:
             j=1
-            cursor.execute("UPDATE `user_data` SET `facebook` = '" + str(facebook) + "' WHERE user_id=" + str(userID) + ";")
+            cursor.execute("UPDATE `user_data` SET `facebook` = '" + str(facebook) + "',`twitter` = '" + str(twitter) + "',`instagram` = '" + str(instagram) + "',`youtube` = '" + str(youtube) + "',`snapchat` = '" + str(snapchat) + "',`tiktok` = '" + str(tiktok) + "' WHERE user_id=" + str(userID) + ";")
             conn.commit()
             facebook_response =str(cursor.rowcount)
-
-            cursor.execute("UPDATE `user_data` SET `twitter` = '" + str(twitter) + "' WHERE user_id=" + str(userID) + ";")
-            conn.commit()
-            twitter_response=str(cursor.rowcount)
-
-            cursor.execute("UPDATE `user_data` SET `instagram` = '" + str(instagram) + "' WHERE user_id=" + str(userID) + ";")
-            conn.commit()
-            instagram_response=str(cursor.rowcount)
-
-            cursor.execute("UPDATE `user_data` SET `youtube` = '" + str(youtube) + "' WHERE user_id=" + str(userID) + ";")
-            conn.commit()
-
-            cursor.execute("UPDATE `user_data` SET `snapchat` = '" + str(snapchat) + "' WHERE user_id=" + str(userID) + ";")
-            conn.commit()
-
-            cursor.execute("UPDATE `user_data` SET `tiktok` = '" + str(tiktok) + "' WHERE user_id=" + str(userID) + ";")
-            conn.commit()
-
-
+          
 
             for tag in tags:
                 cursor.execute("UPDATE `user_data` SET `tag_"+str(j)+"` = '" + str(tag) + "' WHERE user_id=" + str(userID) + ";")

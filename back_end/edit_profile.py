@@ -83,8 +83,9 @@ def edit_profile(msg_received,header):
             j=1
             cursor.execute("UPDATE `user_data` SET `facebook` = '" + str(facebook) + "',`twitter` = '" + str(twitter) + "',`instagram` = '" + str(instagram) + "',`youtube` = '" + str(youtube) + "',`snapchat` = '" + str(snapchat) + "',`tiktok` = '" + str(tiktok) + "' WHERE user_id=" + str(userID) + ";")
             conn.commit()
+
             facebook_response =str(cursor.rowcount)
-          
+
 
             for tag in tags:
                 cursor.execute("UPDATE `user_data` SET `tag_"+str(j)+"` = '" + str(tag) + "' WHERE user_id=" + str(userID) + ";")

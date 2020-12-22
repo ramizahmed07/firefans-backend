@@ -25,7 +25,7 @@ def fetchAll(header):
 
     else:
 
-        result = collection.find({"'posted_by'":user_id })
+        result = collection.find({"posted_by":user_id })
 
         data=[]
 

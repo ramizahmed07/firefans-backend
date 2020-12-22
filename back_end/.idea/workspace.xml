@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82dfd4cf-88b3-4de2-bef8-9ce47f6ce391" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back_end_test.py" afterPath="$PROJECT_DIR$/back_end_test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/edit_profile.py" afterPath="$PROJECT_DIR$/edit_profile.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flask_server.py" afterPath="$PROJECT_DIR$/flask_server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongoDB/create_doc.py" afterPath="$PROJECT_DIR$/mongoDB/create_doc.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistance.py" afterPath="$PROJECT_DIR$/persistance.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongoDB/fetchAllPost.py" afterPath="$PROJECT_DIR$/mongoDB/fetchAllPost.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,11 +39,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit_profile.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit_profile.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/edit_profile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="86" column="10" lean-forward="false" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+            <state relative-caret-position="-2">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/get_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-882">
+              <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -58,6 +66,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="146">
               <caret line="174" column="43" lean-forward="true" selection-start-line="174" selection-start-column="43" selection-end-line="174" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fetchAllPost.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mongoDB/fetchAllPost.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -123,12 +141,12 @@
         <option value="$PROJECT_DIR$/media_handling/audio_upload.py" />
         <option value="$PROJECT_DIR$/media_handling/video_upload.py" />
         <option value="$PROJECT_DIR$/media_handling/upload_image.py" />
-        <option value="$PROJECT_DIR$/mongoDB/fetchAllPost.py" />
         <option value="$PROJECT_DIR$/flask_server.py" />
         <option value="$PROJECT_DIR$/persistance.py" />
         <option value="$PROJECT_DIR$/back_end_test.py" />
         <option value="$PROJECT_DIR$/mongoDB/create_doc.py" />
         <option value="$PROJECT_DIR$/edit_profile.py" />
+        <option value="$PROJECT_DIR$/mongoDB/fetchAllPost.py" />
       </list>
     </option>
   </component>
@@ -636,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/get_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editMail.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1302">
@@ -772,16 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDB/fetchAllPost.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistance.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -820,8 +821,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/edit_profile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="86" column="10" lean-forward="false" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+        <state relative-caret-position="-2">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-882">
+          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDB/fetchAllPost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
           <folding />
         </state>
       </provider>

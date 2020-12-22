@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82dfd4cf-88b3-4de2-bef8-9ce47f6ce391" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongoDB/create_doc.py" afterPath="$PROJECT_DIR$/mongoDB/create_doc.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongoDB/fetchAllPost.py" afterPath="$PROJECT_DIR$/mongoDB/fetchAllPost.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,8 +76,8 @@
       <file leaf-file-name="fetchAllPost.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mongoDB/fetchAllPost.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="40" column="52" lean-forward="false" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+            <state relative-caret-position="252">
+              <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -847,8 +846,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mongoDB/fetchAllPost.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="40" column="52" lean-forward="false" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+        <state relative-caret-position="252">
+          <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

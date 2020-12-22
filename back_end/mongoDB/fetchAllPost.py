@@ -37,12 +37,12 @@ def fetchAll(header):
                 for i in result:
                     posts={'post_id': i['post_id'],
                            'post_details': i['post_details'],
-                           'userName': i['userName'],
+                           'user':{'userName': i['userName'],
                            'fullName':i['fullName'],
                            'posted_by':i['posted_by'],
+                           'profile_photo': info[3]},
                             'timestamp': i['timestamp'],
                             'images' : i['images'],
-                           'profile_photo':info[3],
                             'audio': i['audio'],
                             'video' : i['video'],
                             'post_likes': i['post_likes']}

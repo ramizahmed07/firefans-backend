@@ -38,6 +38,7 @@ def fetchAll(header):
                     posts={'post_id': i['post_id'],
                            'post_details': i['post_details'],
                            'userName': i['userName'],
+                           'fullName':i['fullName'],
                            'posted_by':i['posted_by'],
                             'timestamp': i['timestamp'],
                             'images' : i['images'],

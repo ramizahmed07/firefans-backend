@@ -68,12 +68,14 @@ def add_post(msg_received,header):
         if len(name) == 1:
             for info in name:
                 userName = info[2]
+                fullName=info[1]
                 user_post = {
                     "post_id": post_id,
 
                     "post_details": post_details,
                     "posted_by": user_id,
                     "userName":userName,
+                    "fullName":fullName,
                     "timestamp": timestamp,
                     "images": images,
                     "post_likes": [],

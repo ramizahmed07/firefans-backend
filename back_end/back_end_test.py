@@ -7,8 +7,8 @@ import collections
 
 # api-endpoint
 #https://github.com/ramizahmed07/fb-clone.git
-URL = 'http://127.0.0.1:5000'
-#URL ='https://32aa993c95fd.ngrok.io'
+#URL = 'http://127.0.0.1:5000'
+URL ='https://32aa993c95fd.ngrok.io'
 token_home="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTAwNTQ1OTEsImlhdCI6MTYwNzQ2MjU5MSwic3ViIjoyfQ.6cDNZvyvdulh5zL6y_rVssDfF55moe4PElcxvzl5QBU"
 token_google="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDk3ODQ0ODQsImlhdCI6MTYwNzE5MjQ4NCwic3ViIjo4fQ.3AqUCoAGqvnQtqwoxo_j66ID1aGmpZRB6Loud9366KQ"
 
@@ -199,5 +199,6 @@ def fetchAll():
 
     print(r.read().decode())
 
-fetchAll()
+#fetchAll()
 #mega_poster()
+editProf()

@@ -136,7 +136,7 @@ def edit_profile(msg_received,header):
                     cursor.execute("UPDATE `profile_photo` SET `profile_pic` = '" + str(profile_photo) + "' WHERE user_id=" + str(userID) + ";")
                     conn.commit()
 
-            if subscription_price>0:
+            if int(subscription_price)>0:
                cursor.execute("UPDATE `subscription_price` SET `subscription_price` = '" + str(subscription_price) + "' WHERE user_id=" + str(userID) + ";")
                conn.commit()
                subscription_price_response=str(cursor.rowcount)

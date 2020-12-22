@@ -56,12 +56,12 @@ def editProf():
             "profile_photo":"www.profile.com",
             "tags": ["", "","","",""],
             "links": {
-                "facebook": "www.fb.com",
-                "twitter": "www.twit.com",
-                "youtube":"www.youtube.com",
-                "instagram":"www.ig.com",
-                "snapchat":"www.snappy.com",
-                "tiktok":"www.tik.com"
+                "facebook": "www.facebook.com",
+                "twitter": "www.twitter.com",
+                "youtube":"www.yt.com",
+                "instagram":"www.insta.com",
+                "snapchat":"www.snap.com",
+                "tiktok":"www.tiktok.com"
             }
         }
     }

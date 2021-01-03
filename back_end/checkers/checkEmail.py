@@ -14,9 +14,11 @@ def check_email(msg_received):
     row = cursor.fetchall()
 
     if len(row) != 0:
-
+        conn.close()
+        cursor.close()
         return json.dumps({'email':'1'})
 
     else:
-
+        conn.close()
+        cursor.close()
         return json.dumps({'email':'0'})

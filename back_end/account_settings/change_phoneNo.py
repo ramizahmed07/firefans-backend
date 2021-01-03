@@ -13,6 +13,8 @@ def update_phoneNo(msg_received,header):
     cursor = conn.cursor()
 
     if user_id == "Error expired token" or user_id == "Error invalid token":
+        conn.close()
+        cursor.close()
         return json.dumps({'Error': 'login in again'})
 
     else:

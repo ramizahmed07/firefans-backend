@@ -13,7 +13,9 @@ def update_userName(msg_received,header):
     cursor = conn.cursor()
 
     if user_id == "Error expired token" or user_id == "Error invalid token":
-        print(header)
+        #print(header)
+        conn.close()
+        cursor.close()
         return json.dumps({'Error': 'login in again'})
 
     else:

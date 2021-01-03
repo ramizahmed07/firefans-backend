@@ -15,8 +15,11 @@ def check_userName(msg_received):
 
     if len(row) != 0:
 
+        conn.close()
+        cursor.close()
         return json.dumps({'userName':'1'})
 
     else:
-
+        conn.close()
+        cursor.close()
         return json.dumps({'userName':'0'})

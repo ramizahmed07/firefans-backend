@@ -29,15 +29,14 @@ def deletePost(msg_received,header):
         cursor.execute("SELECT * FROM `user` WHERE user_id='" + str(user_id) + "';")
         account = cursor.fetchall()
         if len(account) == 1:
+            data = ""
             for info in account:
 
                 result = collection.delete_one({"post_id": post_id})
-                data=[]
 
-                for i in result:
-                    #{ "acknowledged" : true, "deletedCount" : 1 }
-                    posts= {"deleted":"true","deletedCount":i["deletedCount" ]}
 
-                    data.append(posts)
+                data=result.acknowledged
 
-                return json.dumps(data)
+            return json.dumps({"deleted":data})
+        else:
+            return json.dumps({"Error":"user not in DB"})

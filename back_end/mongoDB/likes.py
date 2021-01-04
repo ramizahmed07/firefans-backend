@@ -38,7 +38,7 @@ def likePost(msg_received,header):
                 result=collection.update_one({ 'post_id':post_id },{ '$push': {'post_likes':userName}})
                 data=result.acknowledged
 
-            return json.dumps({"acknowledged":data})
+            return json.dumps({"liked":data})
         else:
             print("error occured")
 
@@ -68,6 +68,6 @@ def dislikePost(msg_received,header):
                 result = collection.update_one({'post_id':post_id}, {'$pull': {'post_likes': userName}})
                 data=result.acknowledged
 
-            return json.dumps({"acknowledged":data})
+            return json.dumps({"disliked":data})
 
 

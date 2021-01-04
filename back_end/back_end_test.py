@@ -199,8 +199,22 @@ def fetchAll():
 
     print(r.read().decode())
 
+def liker():
+    req = urllib.request.Request(URL)
+    req.add_header('Content-Type', 'application/json; charset=utf-8')
+    req.add_header("Authorization", token_google)
+
+    x = {"subject": "dislikePost",'post_id':"9r1B9RUOym"}
+    body2 = json.dumps(x)
+    jsondata = body2.encode('utf-8')
+
+    r = urllib.request.urlopen(req, jsondata)
+
+    print(r.read().decode())
+
+
 #fetchAll()
 #mega_poster()
 #editProf()
 #change_mail()
-login()
+liker()

@@ -112,7 +112,7 @@ def chat():
     elif msg_subject == "likePost":
         return likes.likePost(msg_received,header)
 
-    elif msg_subject == "likePost":
+    elif msg_subject == "dislikePost":
         return likes.dislikePost(msg_received,header)
 
 

@@ -10,7 +10,7 @@ import collections
 #URL = 'http://127.0.0.1:5000'
 URL ='https://32aa993c95fd.ngrok.io'
 token_home="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTAwNTQ1OTEsImlhdCI6MTYwNzQ2MjU5MSwic3ViIjoyfQ.6cDNZvyvdulh5zL6y_rVssDfF55moe4PElcxvzl5QBU"
-token_google="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDk3ODQ0ODQsImlhdCI6MTYwNzE5MjQ4NCwic3ViIjo4fQ.3AqUCoAGqvnQtqwoxo_j66ID1aGmpZRB6Loud9366KQ"
+token_google="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTIzNzc3NjAsImlhdCI6MTYwOTc4NTc2MCwic3ViIjo4fQ.ZlS3sFc6_XqKE4PzzJcfsL1BVDFO2dl-R_w_5fpS7uA"
 
 
 def login():
@@ -18,7 +18,7 @@ def login():
     req = urllib.request.Request(URL)
     req.add_header('Content-Type', 'application/json; charset=utf-8')
 
-    x={'subject':"login",'email':"hassanA",'password':"1234566"}
+    x={'subject':"login",'email':"hassan",'password':"12345678"}
     #x = {'subject': "login", 'email': "hassan1234", 'password': "12345678"}
     body2=json.dumps(x)
     jsondata=body2.encode('utf-8')
@@ -48,8 +48,8 @@ def editProf():
         "data": {
             "userName": "hassan",
             "fullName": "hassan",
-            "subscription_price": "200",
-            "bio": "wewewwew",
+            "subscription_price": "500",
+            "bio": "wewewwewrfhgtyjuikjjytfredswassawssddssssaawfgikklljhgfdxffddzdd",
             "location": "Nairobi",
             "website":"www.weiwiew.com",
             "cover_photo":"www.cover.com",
@@ -100,7 +100,7 @@ def persist():
 def change_mail():
     req = urllib.request.Request(URL)
     req.add_header('Content-Type', 'application/json; charset=utf-8')
-    req.add_header("Authorization",token_home)
+    req.add_header("Authorization",token_google)
 
     x = {'subject': "changeMail","email":"johnruben150@gmail.com"}
     body2 = json.dumps(x)
@@ -169,7 +169,7 @@ def poster():
 def mega_poster():
     req = urllib.request.Request(URL)
     req.add_header('Content-Type', 'application/json; charset=utf-8')
-    req.add_header("Authorization", token_home)
+    req.add_header("Authorization", token_google)
     x= {
         "subject":"mega_post",
             "post_details": "post_details",
@@ -189,7 +189,7 @@ def mega_poster():
 def fetchAll():
     req = urllib.request.Request(URL)
     req.add_header('Content-Type', 'application/json; charset=utf-8')
-    req.add_header("Authorization", token_home)
+    req.add_header("Authorization", token_google)
 
     x = {"subject": "fetch_all"}
     body2 = json.dumps(x)
@@ -201,4 +201,6 @@ def fetchAll():
 
 #fetchAll()
 #mega_poster()
-editProf()
+#editProf()
+#change_mail()
+login()

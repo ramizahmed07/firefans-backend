@@ -7,7 +7,7 @@ from flask_cors import CORS, cross_origin
 from checkers import checkPhoneNo,checkUserName,checkEmail
 from account_settings import change_email,change_password,change_phoneNo,change_userName,verify_email,isPasswordCorrect
 from media_handling import upload_image
-from mongoDB import create_doc, fetchAllPost
+from mongoDB import create_doc, fetchAllPost,likes
 
 from flask import request
 
@@ -108,6 +108,12 @@ def chat():
 
     elif msg_subject == "fetch_all":
         return fetchAllPost.fetchAll(header)
+
+    elif msg_subject == "likePost":
+        return likes.likePost(msg_received,header)
+
+    elif msg_subject == "likePost":
+        return likes.dislikePost(msg_received,header)
 
 
 

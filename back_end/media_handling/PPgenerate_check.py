@@ -20,6 +20,10 @@ def check(code):
     cursor.execute("SELECT * FROM `profile_photo` WHERE uniqueID ='" + str(code) + "';")
     row = cursor.fetchall()
     if len(row) > 0:
+        conn.close()
+        cursor.close()
         generate()
     else:
+        conn.close()
+        cursor.close()
         return code

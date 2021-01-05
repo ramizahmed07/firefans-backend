@@ -40,7 +40,7 @@ def likePost(msg_received,header):
 
             return json.dumps({"liked":data})
         else:
-            print("error occured")
+            print("error occurred")
 
 def dislikePost(msg_received,header):
 

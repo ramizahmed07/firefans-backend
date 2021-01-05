@@ -7,7 +7,7 @@ from flask_cors import CORS, cross_origin
 from checkers import checkPhoneNo,checkUserName,checkEmail
 from account_settings import change_email,change_password,change_phoneNo,change_userName,verify_email,isPasswordCorrect
 from media_handling import upload_image
-from mongoDB import create_doc, fetchAllPost,likes,delete_post
+from mongoDB import create_doc, fetchAllPost,likes,delete_post,edit_post
 
 from flask import request
 
@@ -117,6 +117,9 @@ def chat():
 
     elif msg_subject == "deletePost":
         return delete_post.deletePost(msg_received,header)
+
+    elif msg_subject == "editPost":
+        return edit_post.editPost(msg_received,header)
 
 
 

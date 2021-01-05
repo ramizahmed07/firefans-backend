@@ -181,5 +181,5 @@ def post_image(msg_received,header):
 
                 return json.dumps({
                     'data': presigned_post,
-                    'image_url': 'https://%s.s3.amazonaws.com/%s' % (S3_BUCKET,fileName)
+                    'post_image_url': 'https://%s.s3.amazonaws.com/%s' % (S3_BUCKET,fileName)
                 })

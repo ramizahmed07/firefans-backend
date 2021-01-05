@@ -7,8 +7,8 @@ import collections
 
 # api-endpoint
 #https://github.com/ramizahmed07/fb-clone.git
-URL = 'http://127.0.0.1:5000'
-#URL ='https://32aa993c95fd.ngrok.io'
+#URL = 'http://127.0.0.1:5000'
+URL ='https://32aa993c95fd.ngrok.io'
 token_home="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTAwNTQ1OTEsImlhdCI6MTYwNzQ2MjU5MSwic3ViIjoyfQ.6cDNZvyvdulh5zL6y_rVssDfF55moe4PElcxvzl5QBU"
 token_google="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTIzNzc3NjAsImlhdCI6MTYwOTc4NTc2MCwic3ViIjo4fQ.ZlS3sFc6_XqKE4PzzJcfsL1BVDFO2dl-R_w_5fpS7uA"
 
@@ -202,9 +202,22 @@ def fetchAll():
 def liker():
     req = urllib.request.Request(URL)
     req.add_header('Content-Type', 'application/json; charset=utf-8')
-    req.add_header("Authorization", token_home)
+    req.add_header("Authorization", token_google)
 
-    x = {"subject": "deletePost",'post_id':"9r1B9RUOym"}
+    x = {"subject": "likePost",'post_id':"1e8nksmT21"}
+    body2 = json.dumps(x)
+    jsondata = body2.encode('utf-8')
+
+    r = urllib.request.urlopen(req, jsondata)
+
+    print(r.read().decode())
+
+def postimage():
+    req = urllib.request.Request(URL)
+    req.add_header('Content-Type', 'application/json; charset=utf-8')
+    req.add_header("Authorization", token_google)
+
+    x = {"subject": "postImage",'file_type':"jpg"}
     body2 = json.dumps(x)
     jsondata = body2.encode('utf-8')
 
@@ -214,7 +227,8 @@ def liker():
 
 
 #fetchAll()
-#mega_poster()
+mega_poster()
 #editProf()
 #change_mail()
-liker()
+#postimage()
+#liker()
